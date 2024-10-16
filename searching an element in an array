@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int num_players;
+    printf("Enter the number of players: ");
+    scanf("%d", &num_players);
+    int scores[num_players];
+    printf("Enter the scores separated by spaces: ");
+    for (int i = 0; i < num_players; i++) {
+        scanf("%d", &scores[i]);
+    }
+    int lowest_score = scores[0]; 
+
+    for (int i = 1; i < num_players; i++) {
+        if (scores[i] < lowest_score) {
+            lowest_score = scores[i];
+        }
+    }
+    printf("The lowest score is: %d\n", lowest_score);
+    return 0;
+}
